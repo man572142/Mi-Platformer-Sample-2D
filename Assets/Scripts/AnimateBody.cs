@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AnimateBody : MonoBehaviour
 {
     [SerializeField] float defaultAnimTime = 1f;
     [SerializeField] Vector2 xSqueeze = new Vector2(1.2f, 0.8f);
     [SerializeField] Vector2 ySqueeze = new Vector2(0.8f, 1.2f);
     Coroutine coroutine;
+    [SerializeField] Color airColor = Color.black;
+    Color originColor = Color.black;
+    SpriteRenderer myRenderer;
+
+    private void Start()
+    {
+        myRenderer = GetComponent<SpriteRenderer>();
+        originColor = myRenderer.color;
+    }
 
 
     public void SqueezeHorizontal()
@@ -39,5 +49,13 @@ public class AnimateBody : MonoBehaviour
             yield return null;
         }
         transform.localScale = endValue;
+    }
+
+    public void SetAirColor(bool isAir)
+    {
+        if (isAir && myRenderer.color != airColor)
+            myRenderer.color = airColor;
+        else if(!isAir && myRenderer.color != originColor)
+            myRenderer.color = originColor;
     }
 }
