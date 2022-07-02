@@ -14,19 +14,15 @@ namespace Game.Control
         
         Collider2D boxCollider = null;
 
-        [Header("Horizontal")]
+        
         [SerializeField] protected float maxMovingVelocity = 10f;
-        [SerializeField] protected float acclerationTime = 1f;
-        [SerializeField] protected float deacclerationTime = 0.4f;
+        [SerializeField] protected float maxJumpVelocity = 5f;
+
         protected bool isStart = false;
         protected float velocityX = 0f;
 
-        [Header("Vertical")]
-        [SerializeField] protected float maxJumpVelocity = 5f;
-        [SerializeField] protected float jumpAccTime = 0.1f;
-        [SerializeField] protected float jumpDeaccTime = 0.2f;
-        [SerializeField] protected float fallAccleration = 1f;
-        [SerializeField] protected float fallAccTime = 1f;
+        
+        
         [SerializeField] LayerMask groundLayer;
         protected Tween fallTweener;
         protected float velocityY = 0f;
@@ -45,16 +41,17 @@ namespace Game.Control
         protected bool isGrounded = false;
         protected RaycastHit2D touchGround;
 
-        protected virtual void Awake()
+        private void Awake()
         {
             myRigid = GetComponent<Rigidbody2D>();
             boxCollider = GetComponent<Collider2D>();
             vCamTransposer = vCam.GetCinemachineComponent<CinemachineFramingTransposer>();
+            vCam.Follow = transform;
         }
 
         public virtual void Start()
         {
-
+            myRigid.gravityScale = 1f;
         }
 
         public virtual void Update()
@@ -78,33 +75,13 @@ namespace Game.Control
 
 
         public virtual void FixedUpdate()
-        {
-            if (velocityX > 0.01f || velocityX < -0.01f)
-            {
-                myRigid.velocity = new Vector2(velocityX, myRigid.velocity.y);
-                InvokeRefreshUI(Mathf.Abs(velocityX) / maxMovingVelocity);
-            }
-
-            if (velocityY > 0.01f || velocityY < -0.01f)
-            {
-                myRigid.velocity = new Vector2(myRigid.velocity.x, velocityY);
-            }
+        {           
             Fall();
         }
 
-        public virtual void Move()
-        {
-
-        }
-        public virtual void Jump()
-        {
-
-        }
-
-        public virtual void Fall()
-        {
-
-        }
+        public abstract void Move();
+        public abstract void Jump();
+        public abstract void Fall();
 
         public void InvokeRefreshUI(float value)
         {

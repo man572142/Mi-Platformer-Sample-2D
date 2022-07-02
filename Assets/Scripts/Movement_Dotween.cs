@@ -8,6 +8,15 @@ namespace Game.Control
 {
     public class Movement_Dotween : Movement
     {
+        [Header("Horizontal")]
+        [SerializeField] float acclerationTime = 1f;
+        [SerializeField] float deacclerationTime = 0.4f;
+        [Header("Vertical")]
+        [SerializeField] float jumpAccTime = 0.1f;
+        [SerializeField] float jumpDeaccTime = 0.2f;
+        [SerializeField] float fallAccleration = 1f;
+        //[SerializeField] float fallAccTime = 1f;
+
         [Header("Dotween Ease")]
         [SerializeField] Ease acclerationEase = Ease.OutQuint;
         [SerializeField] Ease deacclerationEase = Ease.OutCubic;
@@ -16,6 +25,12 @@ namespace Game.Control
         [SerializeField] Ease jumpAccEase = Ease.OutCubic;
         [SerializeField] Ease jumpDeaccEase = Ease.OutQuint;
         [SerializeField] Ease fallEase = Ease.InSine;
+
+        public override void Start()
+        {
+            myRigid.gravityScale = 0f;           
+        }
+
 
 
         public override void Move()
@@ -26,10 +41,13 @@ namespace Game.Control
                 {
                     movingTween?.Kill();
                     movingTween = DOTween.To(() => velocityX, x => velocityX = x, Input.GetAxisRaw("Horizontal") * maxMovingVelocity, acclerationTime).SetEase(acclerationEase);
-                    vCamTransposer.m_ScreenX = 0.5f - Input.GetAxisRaw("Horizontal") * 0.1f * cinemachineLookAhead;
+                    
                     animateBody?.SqueezeHorizontal();
                     isStart = true;
                 }
+                vCamTransposer.m_ScreenX -= Input.GetAxisRaw("Horizontal") * Time.deltaTime * 0.1f * cinemachineLookAhead;
+
+                vCamTransposer.m_ScreenX = Mathf.Clamp(vCamTransposer.m_ScreenX, 0.35f, 0.65f);
             }
             else if (isStart)
             {
@@ -81,6 +99,22 @@ namespace Game.Control
             }
 
         }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (velocityX > 0.01f || velocityX < -0.01f)
+            {
+                myRigid.velocity = new Vector2(velocityX, myRigid.velocity.y);
+                InvokeRefreshUI(Mathf.Abs(velocityX) / maxMovingVelocity);
+            }
+
+            if (velocityY > 0.01f || velocityY < -0.01f)
+            {
+                myRigid.velocity = new Vector2(myRigid.velocity.x, velocityY);
+            }
+        }
+
 
 
         //public static void DoValue(float value , float end , float duration)

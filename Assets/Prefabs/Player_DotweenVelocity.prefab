@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8826725880860603376}
   - component: {fileID: 8826725880860603380}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_DotweenVelocity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
