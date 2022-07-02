@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2037930588005198398
 Transform:
   m_ObjectHideFlags: 0
@@ -94,13 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMovingVelocity: 7
-  acclerationTime: 1
-  deacclerationTime: 0.4
   maxJumpVelocity: 8
-  jumpAccTime: 0.1
-  jumpDeaccTime: 0.2
-  fallAccleration: 1
-  fallAccTime: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -178,7 +172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.2622375, g: 0.62492466, b: 0.7830189, a: 1}
   m_FlipX: 0

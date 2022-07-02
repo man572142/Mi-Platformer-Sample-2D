@@ -22,6 +22,7 @@ namespace Game.Control
         [SerializeField] Ease deacclerationEase = Ease.OutCubic;
         Tween movingTween;
         Sequence jumpSequence;
+        Tween fallCamTween;
         [SerializeField] Ease jumpAccEase = Ease.OutCubic;
         [SerializeField] Ease jumpDeaccEase = Ease.OutQuint;
         [SerializeField] Ease fallEase = Ease.InSine;
@@ -46,7 +47,6 @@ namespace Game.Control
                     isStart = true;
                 }
                 vCamTransposer.m_ScreenX -= Input.GetAxisRaw("Horizontal") * Time.deltaTime * 0.1f * cinemachineLookAhead;
-
                 vCamTransposer.m_ScreenX = Mathf.Clamp(vCamTransposer.m_ScreenX, 0.35f, 0.65f);
             }
             else if (isStart)
@@ -86,7 +86,9 @@ namespace Game.Control
             if (touchGround && fallTweener.IsActive() && isFalling)
             {               
                 fallTweener.Kill();
+                fallCamTween.Kill();
                 velocityY = 0;
+                vCamTransposer.m_ScreenY = 0.6f;
                 isFalling = false;
             }
 
@@ -95,7 +97,11 @@ namespace Game.Control
                 fallTweener = DOTween.To(() => velocityY, y => velocityY = y, -fallAccleration, Time.fixedDeltaTime)
                     .SetEase(fallEase).SetUpdate(UpdateType.Fixed)
                     .SetLoops(-1,LoopType.Incremental);
+
+                fallCamTween = DOTween.To(() => vCamTransposer.m_ScreenY, y => vCamTransposer.m_ScreenY = y, 0.4f, 0.5f)
+                    .SetEase(fallEase);
                 isFalling = true;
+                
             }
 
         }

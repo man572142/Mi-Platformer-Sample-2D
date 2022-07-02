@@ -252,9 +252,9 @@ RectTransform:
   m_Father: {fileID: 1935632805}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 237}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5568883
@@ -385,9 +385,9 @@ RectTransform:
   m_Father: {fileID: 1935632805}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 237}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -200, y: -40}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15149363
@@ -529,15 +529,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.395
+  m_LookaheadTime: 0.39
   m_LookaheadSmoothing: 6.7
   m_LookaheadIgnoreY: 0
   m_XDamping: 2
-  m_YDamping: 3
+  m_YDamping: 2
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.4629275
-  m_ScreenY: 0.5
+  m_ScreenX: 0.35
+  m_ScreenY: 0.6
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -639,9 +639,9 @@ RectTransform:
   m_Father: {fileID: 1935632805}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 237}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 200, y: -40}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291494394
@@ -797,7 +797,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.6698113, g: 0.6422719, b: 0.43916875, a: 1}
   m_FlipX: 0
@@ -1284,7 +1284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6591412, y: 0, z: -10}
+  m_LocalPosition: {x: 2.6669676, y: 1.0000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496436826}
@@ -1530,7 +1530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.6698113, g: 0.6422719, b: 0.43916875, a: 1}
   m_FlipX: 0
@@ -1734,7 +1734,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.34117648, g: 0.46274513, b: 0.21568629, a: 0}
   m_FlipX: 0
@@ -1988,7 +1988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307721290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6591412, y: 0, z: -10}
+  m_LocalPosition: {x: 2.6669676, y: 1.0000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 80667623}
@@ -2429,7 +2429,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.6698113, g: 0.6422719, b: 0.43916875, a: 1}
   m_FlipX: 0
@@ -2817,10 +2817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_UnityDefault
       objectReference: {fileID: 0}
-    - target: {fileID: 2037930588005198394, guid: 6b64a5d08f4988e45b52307851bca9d3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2037930588005198398, guid: 6b64a5d08f4988e45b52307851bca9d3, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2887,18 +2883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_DotweenVelocity
       objectReference: {fileID: 0}
-    - target: {fileID: 8826725880860603379, guid: 690477d8922be5646b14ae2232944643, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8826725880860603380, guid: 690477d8922be5646b14ae2232944643, type: 3}
       propertyPath: vCam
       value: 
       objectReference: {fileID: 1307721291}
-    - target: {fileID: 8826725880860603380, guid: 690477d8922be5646b14ae2232944643, type: 3}
-      propertyPath: cinemachineLookAhead
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8826725880860603383, guid: 690477d8922be5646b14ae2232944643, type: 3}
       propertyPath: m_RootOrder
       value: 9

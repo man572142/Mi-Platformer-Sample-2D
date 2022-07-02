@@ -94,19 +94,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMovingVelocity: 10
-  acclerationTime: 1
-  deacclerationTime: 0.4
   maxJumpVelocity: 30
-  jumpAccTime: 0.1
-  jumpDeaccTime: 0.2
-  fallAccleration: 1
-  fallAccTime: 0.25
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   vCam: {fileID: 0}
-  cinemachineLookAhead: 1.5
+  cinemachineLookAhead: 3
   animateBody: {fileID: 8826725881193034591}
+  acclerationTime: 1
+  deacclerationTime: 0.4
+  jumpAccTime: 0.1
+  jumpDeaccTime: 0.2
+  fallAccleration: 0.8
   acclerationEase: 9
   deacclerationEase: 15
   jumpAccEase: 9
@@ -183,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.8584906, g: 0.19842473, b: 0.22118574, a: 1}
   m_FlipX: 0
